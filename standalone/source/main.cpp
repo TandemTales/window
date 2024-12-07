@@ -1,10 +1,10 @@
-#include "template.h"
+#include "window/window.h"
 
-using namespace stk;
+using namespace tt;
 
 int main()
 {
-	c_template tpl;
-	tpl.go_template();
+	c_window window(500, 500, "Tandem Tales");
+	while (window.update());
 	return 0;
 }
