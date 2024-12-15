@@ -13,8 +13,9 @@ namespace tt
     class c_window
     {
     public:
-        c_window(uint32_t x, uint32_t y, char const* Title);
-        
+        c_window(uint32_t x, uint32_t y, char const* title);
+		c_window(uint32_t x, uint32_t y, std::string const& title);
+
         bool is_open() const;
         bool update();
         bool make_texture(std::string const& image_path);

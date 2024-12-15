@@ -2,18 +2,28 @@
 
 namespace tt
 {
-    c_window::c_window(uint32_t x, uint32_t y, char const* Title)
-        : m_window(sf::VideoMode(x, y), Title)
+    c_window::c_window(uint32_t x, uint32_t y, char const* title)
+        : m_window(sf::VideoMode(x, y), title)
     {
     }
 
-    bool c_window::is_open() const 
+	c_window::c_window(uint32_t x, uint32_t y, std::string const& title)
+		: m_window(sf::VideoMode(x, y), title.c_str())
+	{
+	}
+
+	bool c_window::is_open() const
     { 
         return m_window.isOpen(); 
     }
 
     bool c_window::update()
     {
+		if (!m_window.isOpen())
+		{
+			return false;
+		}
+
         m_input.reset();
         sf::Event event;
         while (m_window.pollEvent(event))

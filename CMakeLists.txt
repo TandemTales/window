@@ -43,11 +43,19 @@ CPMAddPackage(
 		"SFML_BUILD_WINDOW YES"
 )
 
-# Add package: shoejunk/ds
+# Add package: TandemTales/core
 CPMAddPackage(
 	NAME core
 	GITHUB_REPOSITORY TandemTales/core
 	#VERSION 2.1.1
+	GIT_TAG main
+)
+
+# Add package: TandemTales/factory
+CPMAddPackage(
+	NAME factory
+	GITHUB_REPOSITORY TandemTales/factory
+	#VERSION 0.0.1
 	GIT_TAG main
 )
 
@@ -78,7 +86,7 @@ target_include_directories(
 )
 
 # Example link library:
-target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-window core)
+target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-window core factory)
 
 # This line will create a folder hierarchy in the Visual Studio solution explorer
 # that matches the directory structure under ${CMAKE_CURRENT_SOURCE_DIR}/source.
