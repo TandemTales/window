@@ -1,4 +1,4 @@
 @echo off
-pushd build\standalone\
-Debug\window.exe
+pushd build\standalone\runtime\
+..\Debug\window.exe
 popd
